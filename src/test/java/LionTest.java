@@ -27,14 +27,8 @@ public class LionTest {
 
     @Test
     public void checkFoodLion() throws Exception {
-        List<String> predatorFood = List.of(
-            ConstantsAnimal.ANIMALS,
-            ConstantsAnimal.BIRDS,
-            ConstantsAnimal.FISH
-        );
-
-        Mockito.when(lion.getFood()).thenReturn(predatorFood);
-        List<String> checkFoodLion = lion.getFood();
+        Lion lionMan = new Lion("Самец", new Feline());
+        List<String> checkFoodLion = lionMan.getFood();
 
         Assert.assertTrue(checkFoodLion.contains(ConstantsAnimal.ANIMALS));
         Assert.assertTrue(checkFoodLion.contains(ConstantsAnimal.BIRDS));
