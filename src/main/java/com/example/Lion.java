@@ -2,11 +2,10 @@ package com.example;
 import java.util.List;
 
 public class Lion {
-    KittensInterface feline;
-
     boolean hasMane;
+    Feline feline;
 
-    public Lion(String sex) throws Exception {
+    public Lion(String sex, Feline feline) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -15,7 +14,7 @@ public class Lion {
             throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
 
-        feline = new Feline();
+        this.feline = feline;
     }
 
     public int getKittens() {

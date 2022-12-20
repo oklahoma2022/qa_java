@@ -1,4 +1,5 @@
 import Constsnts.ConstantsAnimal;
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,7 +26,7 @@ public class LionTest {
     }
 
     @Test
-    public void checkFood() throws Exception {
+    public void checkFoodLion() throws Exception {
         List<String> predatorFood = List.of(
             ConstantsAnimal.ANIMALS,
             ConstantsAnimal.BIRDS,
@@ -43,10 +44,20 @@ public class LionTest {
 
     @Test
     public void checkSex() throws Exception{
-        Lion lionMan = new Lion("Самец");
-        Lion lionWoman = new Lion("Самка");
+        Feline feline = new Feline();
+
+        Lion lionMan = new Lion("Самец", feline);
+        Lion lionWoman = new Lion("Самка", feline);
 
         Assert.assertTrue(lionMan.doesHaveMane());
         Assert.assertFalse(lionWoman.doesHaveMane());
+    }
+
+    @Test
+    public void checkKittensLion() throws Exception {
+        Lion lionMan = new Lion("Самец", new Feline());
+
+        int countKittensLion = lionMan.getKittens();
+        Assert.assertEquals(countKittensLion, 1);
     }
 }
