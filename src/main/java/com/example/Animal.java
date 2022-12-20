@@ -1,14 +1,20 @@
 package com.example;
 
+import Constsnts.ConstantsAnimal;
+
 import java.util.List;
 
-public class Animal {
+public class Animal implements FoodInterface {
 
     public List<String> getFood(String animalKind) throws Exception {
         if ("Травоядное".equals(animalKind)) {
             return List.of("Трава", "Различные растения");
         } else if ("Хищник".equals(animalKind)) {
-            return List.of("Животные", "Птицы", "Рыба");
+            return List.of(
+                ConstantsAnimal.ANIMALS,
+                ConstantsAnimal.BIRDS,
+                ConstantsAnimal.FISH
+            );
         } else {
             throw new Exception("Неизвестный вид животного, используйте значение Травоядное или Хищник");
         }

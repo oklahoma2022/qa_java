@@ -1,5 +1,7 @@
 package com.example;
 
+import Constsnts.ConstantsAnimal;
+
 import java.util.List;
 
 public class Feline extends Animal implements Predator {
@@ -11,7 +13,7 @@ public class Feline extends Animal implements Predator {
 
     @Override
     public String getFamily() {
-        return "Кошачьи";
+        return ConstantsAnimal.CATS;
     }
 
     public int getKittens() {
